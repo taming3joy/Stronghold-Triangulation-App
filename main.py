@@ -1,4 +1,4 @@
-from triangulation.t_gui import run_app
+from triangulation import triangulation_gui
 
 if __name__ == "__main__":
-    run_app()
+    triangulation_gui()
