@@ -25,7 +25,7 @@ This is useful for Minecraft players who want to locate strongholds more accurat
 
 ### 🔧 Planned Features:
 - A **Paste button** to extract coordinates directly from Minecraft's `F3+C` copied string for faster input
-- Add a **Distance to stronghold** display
+- Add a **Distance to stronghold** display and update button to update the current distance to stronghold
 - Add a **4,4 coordinate lock**, which adjusts the estimated position to the chunk center where strongholds generate
 
 ## 📚 Inspiration
