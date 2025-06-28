@@ -22,9 +22,10 @@ This is useful for Minecraft players who want to locate strongholds more accurat
 ### ✅ Current Features:
 - GUI interface to enter coordinates and angles
 - Computes intersection point based on 2 inputs
+- A **Paste button** to extract coordinates directly from Minecraft's `F3+C` copied string for faster input
 
 ### 🔧 Planned Features:
-- A **Paste button** to extract coordinates directly from Minecraft's `F3+C` copied string for faster input
+- Add a **Clear button** to clear the measurements from the app
 - Add a **Distance to stronghold** display and update button to update the current distance to stronghold
 - Add a **4,4 coordinate lock**, which adjusts the estimated position to the chunk center where strongholds generate
 
