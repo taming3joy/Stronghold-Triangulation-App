@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk,messagebox
 from pyperclip import paste
+from t_math import triangulate
 
 class gui:
     def __init__(self):
@@ -60,11 +61,13 @@ class gui:
         self.distance_label=tk.Label(self.bottom_frame,text="Distance to Stronghold = - Blocks",font=("Arial",17),bg="white")
         self.distance_label.pack(pady=10)
 
-        self.o_coords=tk.Label(self.bottom_frame,text="Overworld = (_,_)",font=("Arial",17),bg="white")
-        self.o_coords.pack(pady=5)
+        self.o_label=tk.Label(self.bottom_frame,text="Overworld = (_,_)",font=("Arial",17),bg="white")
+        self.o_label.pack(pady=5)
+        self.o_coords=None
 
-        self.n_coords=tk.Label(self.bottom_frame,text="Nether = (_,_)",font=("Arial",17),bg="white")
-        self.n_coords.pack(pady=10)
+        self.n_label=tk.Label(self.bottom_frame,text="Nether = (_,_)",font=("Arial",17),bg="white")
+        self.n_label.pack(pady=10)
+        self.n_coords=None
 
         self.root.mainloop()
     
@@ -73,12 +76,14 @@ class gui:
     def extract_measurements(self):
         clip_board=paste()
         clip_board=clip_board.split(" ")
-        measurements = [float(x) for x in [clip_board[2],clip_board[4],clip_board[5]]]
+        measurements = [float(x) for x in [clip_board[6],clip_board[8],clip_board[9]]]
         return (tuple(measurements))
     
     def check_valids(self):
         if self.m1_valid and self.m2_valid:
-            print("Perform Calculations")
+            self.o_coords=triangulate(self.m1_values,self.m2_values)
+            self.o_label.config(text=f"Overworld = {self.o_coords}")
+            self.n_label.config(text=f"Nether = {tuple([x//8 for x in self.o_coords])}") #Add this method to t_math later
 
     def onclick_button1(self):
         try:
